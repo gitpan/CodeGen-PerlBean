@@ -1,0 +1,9 @@
+Revision history for Perl extension CodeGen::PerlBean.
+
+0.1.0.1 Sun Nov 10 21:17:49 CET 2002
+	- Added actual code
+
+0.01  Fri Nov  8 21:22:42 2002
+	- original version; created by h2xs 1.21 with options
+		-X CodeGen::PerlBean
+
