@@ -170,5 +170,3 @@ if ($?>>8) {
 } else {
 	ok (1);
 }
-
-unlink ('test.out');

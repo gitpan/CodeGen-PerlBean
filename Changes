@@ -1,5 +1,12 @@
 Revision history for Perl extension CodeGen::PerlBean.
 
+0.1.0.2 Mon Nov 25 21:56:45 CET 2002
+	- BUG: Added Error in PREREQ_PM in Makefile.PL
+	- BUG: Set package name in attributes in PerlBean.pm
+	- BUG: Spell error in constraint documentation for Multi attributes
+	- Added file TODO
+	- Added cvs Revision to Makefile.PL
+
 0.1.0.1 Sun Nov 10 21:17:49 CET 2002
 	- Added actual code
 

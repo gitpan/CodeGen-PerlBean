@@ -29,7 +29,7 @@ our @EXPORT = qw(
 	
 );
 
-our ( $VERSION ) = '$Revision: 0.1.0.1 $ ' =~ /\$Revision:\s+([^\s]+)/;
+our ( $VERSION ) = '$Revision: 0.1.0.2 $ ' =~ /\$Revision:\s+([^\s]+)/;
 
 sub writeMethods {
 	my $self = shift;

@@ -27,7 +27,7 @@ our @EXPORT = qw(
 	
 );
 
-our ( $VERSION ) = '$Revision: 0.1.0.1 $ ' =~ /\$Revision:\s+([^\s]+)/;
+our ( $VERSION ) = '$Revision: 0.1.0.2 $ ' =~ /\$Revision:\s+([^\s]+)/;
 
 my @MON = qw (
 	January
@@ -287,6 +287,7 @@ sub write {
 	$self->writeInitMethodTail ($fh);
 
 	foreach my $attribute ($self->getAttribute ()) {
+		$attribute->setPackage ($self->getPackage ());
 		$attribute->writeMethods ($fh);
 	}
 

@@ -27,7 +27,7 @@ our @EXPORT = qw(
 	
 );
 
-our ( $VERSION ) = '$Revision: 0.1.0.1 $ ' =~ /\$Revision:\s+([^\s]+)/;
+our ( $VERSION ) = '$Revision: 0.1.0.2 $ ' =~ /\$Revision:\s+([^\s]+)/;
 
 sub attribute {
 	# Allow both styles CodeGen::PerlBean::Attribute::Factory->attribute and CodeGen::PerlBean::Attribute::Factory::attribute

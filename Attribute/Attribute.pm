@@ -27,7 +27,7 @@ our @EXPORT = qw(
 	
 );
 
-our ( $VERSION ) = '$Revision: 0.1.0.1 $ ' =~ /\$Revision:\s+([^\s]+)/;
+our ( $VERSION ) = '$Revision: 0.1.0.2 $ ' =~ /\$Revision:\s+([^\s]+)/;
 
 my %ALLOW_ISA = (
 );
@@ -715,8 +715,12 @@ sub writeDocClausesAllowIsa {
 
 	return if (!scalar ($self->getAllowIsa ()));
 
+	my $val = $self->isa ('CodeGen::PerlBean::Attribute::Multi')
+		? 'The values in ARRAY'
+		: 'VALUE';
+
 	$fh->print (<<EOF);
-\=item VALUE must be a (sub)class of:
+\=item ${val} must be a (sub)class of:
 
 \=over
 
@@ -742,8 +746,19 @@ sub writeDocClausesAllowRef {
 	return if (!scalar ($self->getAllowRef ()));
 	my $or = scalar ($self->getAllowIsa ()) ? 'Or, ' : '';
 
+	my $val = '';
+	if ($self->isa ('CodeGen::PerlBean::Attribute::Multi')) {
+		if ($or) {
+			$val = 'the values in ARRAY'
+		} else {
+			$val = 'The values in ARRAY'
+		}
+	} else {
+		$val = 'VALUE';
+	}
+
 	$fh->print (<<EOF);
-\=item ${or}VALUE must be a reference of:
+\=item ${or}${val} must be a reference of:
 
 \=over
 
@@ -769,8 +784,19 @@ sub writeDocClausesAllowValue {
 	return if (!scalar ($self->getAllowValue ()));
 	my $or = scalar ($self->getAllowRef ()) ? 'Or, ' : '';
 
+	my $val = '';
+	if ($self->isa ('CodeGen::PerlBean::Attribute::Multi')) {
+		if ($or) {
+			$val = 'the values in ARRAY'
+		} else {
+			$val = 'The values in ARRAY'
+		}
+	} else {
+		$val = 'VALUE';
+	}
+
 	$fh->print (<<EOF);
-\=item ${or}VALUE must be a one of:
+\=item ${or}${val} must be a one of:
 
 \=over
 
